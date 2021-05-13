@@ -11,6 +11,7 @@ export default function request(config) {
 
     instance.interceptors.request.use(config => {
         // console.log(config);
+        config.headers['Authorization'] = window.sessionStorage.getItem('token')
         return config
     }, err => {
         throw '请求发生错误'

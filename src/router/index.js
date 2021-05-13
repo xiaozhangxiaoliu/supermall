@@ -40,6 +40,12 @@ const routes = [{
     {
         path: '/geren',
         component: Gereg,
+        beforeEnter: (to, from, next) => {
+            if (window.sessionStorage.getItem('token')) {
+                next({ path: '/welcome' })
+            }
+            next();
+        }
 
     },
     {

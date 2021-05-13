@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import Welcome from "./child/welcome";
 import { login } from "../../network/login";
 export default {
   data() {
@@ -25,6 +26,26 @@ export default {
       userpaw: "",
       tokenstr: "",
     };
+  },
+  components: {
+    Welcome,
+  },
+  watch: {
+    tokenstr: function () {
+      if (window.sessionStorage.getItem("token")) {
+        console.log(1);
+        return window.sessionStorage.getItem("token");
+      } else {
+        return "";
+      }
+    },
+  },
+  computed: {
+    gettoken() {
+      var token = window.sessionStorage.getItem("token");
+      console.log(token);
+      return token;
+    },
   },
   methods: {
     zc() {
