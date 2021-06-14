@@ -129,6 +129,7 @@ export default {
       this.isShow = position.y;
       for (let i = 0; i < this.scrolList.length; i++) {
         if (-position.y >= this.scrolList[i]) {
+          console.log(i);
           this.$refs.dnb.current = i + 1;
         } else if (-position.y < this.scrolList[0]) {
           this.$refs.dnb.current = 0;

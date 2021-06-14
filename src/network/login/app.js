@@ -27,8 +27,10 @@ const Users = mongoose.model('Users', new mongoose.Schema({
     password: {
         type: Number,
     }
-}))
-app.use(parse.urlencoded({ extended: false }))
+}));
+//处理application/urlencoded数据
+app.use(parse.urlencoded({ extended: false }));
+//处理json数据
 app.use(parse.json())
 app.use(
     (req, res, next) => {
@@ -74,14 +76,12 @@ app.post('/login', async(req, res) => {
             res.send({
                 status: 200,
                 message: '密码错误',
-
             })
         }
     } else {
         res.send({
             status: 200,
             message: '用户名不存在',
-
         })
 
     }

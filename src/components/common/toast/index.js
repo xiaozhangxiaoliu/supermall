@@ -14,7 +14,7 @@ obj.install = function() {
 
     document.body.append(sltoast.$el);
 
-    Vue.prototype.$toast = sltoast
+    Vue.prototype.$toast = sltoast;
 }
 
 

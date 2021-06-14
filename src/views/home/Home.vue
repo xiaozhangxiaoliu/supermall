@@ -198,7 +198,6 @@ export default {
         // console.log(this.goods[config.params.type].list);
         this.goods[config.params.type].list.push(...res.data.list);
         // console.log(res.data.list);
-
         // console.log(this.goods[config.params.type]);
       });
     },
